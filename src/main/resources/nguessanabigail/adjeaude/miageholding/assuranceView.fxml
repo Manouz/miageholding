@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="nguessanabigail.adjeaude.miageholding.assuranceController"
+            prefHeight="400.0" prefWidth="600.0" >
+    <VBox spacing="20" style="-fx-padding: 20px;" >
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Gestion des Assurances" />
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <TextField fx:id="searchField" promptText="Rechercher..." prefWidth="200" />
+                <ComboBox fx:id="filterComboBox" promptText="Filtrer par..." prefWidth="150" />
+                <Button fx:id="btnAjouterAssurance" onAction="#showAddAssuranceForm" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Nouvelle assurance" />
+            </HBox>
+        </HBox>
+
+        <TableView fx:id="assurancesTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="numCarteCol" prefWidth="120" text="N° Carte" />
+                <TableColumn fx:id="vehiculeCol" prefWidth="150" text="Véhicule" />
+                <TableColumn fx:id="dateDebutCol" prefWidth="120" text="Date début" />
+                <TableColumn fx:id="dateFinCol" prefWidth="120" text="Date fin" />
+                <TableColumn fx:id="agenceCol" prefWidth="150" text="Agence" />
+                <TableColumn fx:id="coutCol" prefWidth="100" text="Coût" />
+                <TableColumn fx:id="statutCol" prefWidth="100" text="Statut" />
+                <TableColumn fx:id="actionsCol" prefWidth="120" text="Actions" />
+            </columns>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Label style="-fx-font-weight: bold;" text="Assurances à renouveler:" />
+            <Label fx:id="expiringAssurancesCount" style="-fx-font-weight: bold; -fx-text-fill: #e74c3c;" text="0" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnExportPDF" onAction="#exportToPDF" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Exporter PDF" />
+            <Button fx:id="btnNotifier" onAction="#notifierRenouvellements" style="-fx-background-color: #e67e22; -fx-text-fill: white;" text="Notifier renouvellements" />
+        </HBox>
+    </VBox>
+</AnchorPane>

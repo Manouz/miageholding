@@ -1,0 +1,103 @@
+MIAGEHOLDING - Structure du Projet
+=================================
+
+1. Structure des Packages
+------------------------
+src/main/java/nguessanabigail/adjeaude/miageholding/
+├── Controller/
+│   └── adminlogistiqueController.java
+├── vehiculesController.java
+└── [autres contrôleurs]
+
+2. Structure des Ressources
+--------------------------
+src/main/resources/nguessanabigail/adjeaude/miageholding/
+├── Fichiers FXML
+│   ├── vehiculesView.fxml
+│   ├── addVehicleForm.fxml
+│   ├── administratif.fxml
+│   └── accueilView.fxml
+└── [autres ressources]
+
+3. Description des Composants Principaux
+---------------------------------------
+a) Gestion des Véhicules
+   - vehiculesView.fxml : Vue principale de gestion des véhicules
+   - addVehicleForm.fxml : Formulaire d'ajout de véhicule
+   - vehiculesController.java : Contrôleur de la gestion des véhicules
+
+b) Administration Logistique
+   - adminlogistiqueController.java : Contrôleur principal de l'administration
+   - Fonctionnalités :
+     * Gestion des véhicules
+     * Navigation entre les vues
+     * Gestion de la déconnexion
+
+4. Fonctionnalités Principales
+-----------------------------
+- Gestion des véhicules
+  * Ajout de véhicules
+  * Affichage des véhicules
+  * Modification des véhicules
+  * Suppression des véhicules
+
+- Formulaire d'ajout de véhicule
+  * Champs : Immatriculation, Marque, Modèle, etc.
+  * Validation des données
+  * Annulation et sauvegarde
+
+- Navigation
+  * Système de navigation entre les différentes vues
+  * Gestion des transitions
+
+5. Structure des Vues
+--------------------
+a) Vue Véhicules (vehiculesView.fxml)
+   - En-tête avec titre
+   - Bouton d'ajout de véhicule
+   - Tableau des véhicules
+   - Actions sur les véhicules
+
+b) Formulaire d'Ajout (addVehicleForm.fxml)
+   - Champs de saisie organisés en colonnes
+   - Validation des données
+   - Boutons d'action (Annuler/Enregistrer)
+
+6. Contrôleurs
+-------------
+a) vehiculesController.java
+   - Gestion du formulaire d'ajout
+   - Validation des données
+   - Interaction avec la base de données
+   - Navigation
+
+b) adminlogistiqueController.java
+   - Gestion de la navigation
+   - Chargement des vues
+   - Gestion de la session
+
+7. Styles et Interface
+---------------------
+- Utilisation de JavaFX pour l'interface
+- Styles CSS intégrés
+- Design moderne et responsive
+- Gestion des thèmes et couleurs
+
+8. Sécurité
+----------
+- Gestion des sessions
+- Authentification
+- Autorisations
+
+9. Base de Données
+-----------------
+- Structure pour stocker les informations des véhicules
+- Relations entre les différentes entités
+- Gestion des transactions
+
+10. Points d'Amélioration
+------------------------
+- Implémentation de la sauvegarde des véhicules
+- Validation plus poussée des données
+- Gestion des erreurs
+- Documentation du code 

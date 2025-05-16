@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nguessanabigail.adjeaude.miageholding.suivieTechniqueController">
+    <children>
+        <Pane prefHeight="47.0" prefWidth="728.0" style="-fx-background-color: grey;">
+            <children>
+                <HBox alignment="CENTER" prefHeight="41.0" prefWidth="728.0" spacing="7.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#showReparationsView" prefWidth="120.0" text="Réparations" />
+                        <Button mnemonicParsing="false" onAction="#showVisiteTechniqueView" prefWidth="120.0" text="Visites Technique" />
+                        <Button mnemonicParsing="false" onAction="#showAssuranceView" prefWidth="120.0" text="Assurances" />
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+        <Pane fx:id="bodySuivieTechnique" layoutY="46.0" prefHeight="532.0" prefWidth="728.0">
+            <children>
+                <Label fx:id="welcomeLabel" layoutX="348.0" layoutY="251.0" text="Label" />
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

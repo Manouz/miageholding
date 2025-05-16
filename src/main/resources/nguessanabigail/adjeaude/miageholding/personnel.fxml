@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="728.0" spacing="20" style="-fx-padding: 20px;"
+      xmlns="http://javafx.com/javafx/17.0.6"
+      xmlns:fx="http://javafx.com/fxml">
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Gestion du Personnel" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Ajouter un employé" />
+    </HBox>
+
+    <TableView VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn prefWidth="100" text="ID" />
+            <TableColumn prefWidth="150" text="Nom" />
+            <TableColumn prefWidth="150" text="Prénom" />
+            <TableColumn prefWidth="150" text="Poste" />
+            <TableColumn prefWidth="150" text="Département" />
+            <TableColumn prefWidth="150" text="Actions" />
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="nguessanabigail.adjeaude.miageholding.addMissionController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <VBox prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #f4f4f4;">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+
+        <!-- En-tête -->
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: #47A1A4; -fx-background-radius: 10;">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+            <Label text="Ajouter une Mission" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Formulaire principal -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+            <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+                <!-- Informations de base -->
+                <GridPane hgap="20.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" />
+                    </columnConstraints>
+
+                    <Label style="-fx-font-weight: bold;" text="Libellé de la mission *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="libMissionField" promptText="Entrez le libellé de la mission" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label style="-fx-font-weight: bold;" text="Véhicule *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <ComboBox fx:id="vehiculeComboBox" maxWidth="1.7976931348623157E308" promptText="Sélectionnez un véhicule disponible" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label style="-fx-font-weight: bold;" text="Circuit *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="circuitField" promptText="Ex: Abidjan - Yamoussoukro - Bouaké" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                </GridPane>
+
+                <Separator />
+
+                <!-- Dates -->
+                <HBox spacing="30.0">
+                    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold;" text="Date de début *" />
+                        <DatePicker fx:id="dateDebutPicker" maxWidth="1.7976931348623157E308" promptText="Sélectionnez la date de début" />
+                    </VBox>
+                    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold;" text="Date de fin *" />
+                        <DatePicker fx:id="dateFinPicker" maxWidth="1.7976931348623157E308" promptText="Sélectionnez la date de fin" />
+                    </VBox>
+                </HBox>
+
+                <Separator />
+
+                <!-- Coûts -->
+                <HBox spacing="30.0">
+                    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold;" text="Coût de la mission (FCFA) *" />
+                        <TextField fx:id="coutMissionField" promptText="Ex: 250000" />
+                    </VBox>
+                    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold;" text="Coût du carburant (FCFA) *" />
+                        <TextField fx:id="coutCarburantField" promptText="Ex: 75000" />
+                    </VBox>
+                </HBox>
+
+                <Separator />
+
+                <!-- Participants -->
+                <VBox spacing="10.0">
+                    <Label style="-fx-font-weight: bold;" text="Participants à la mission *">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <Label text="Sélectionnez un ou plusieurs participants (maintenez Ctrl pour sélection multiple)" style="-fx-text-fill: #666;" />
+                    <ListView fx:id="personnelListView" prefHeight="150.0" style="-fx-border-color: #ccc; -fx-border-radius: 5;" />
+                </VBox>
+
+                <Separator />
+
+                <!-- Observations -->
+                <VBox spacing="10.0">
+                    <Label style="-fx-font-weight: bold;" text="Observations" />
+                    <TextArea fx:id="observationArea" prefHeight="100.0" promptText="Entrez vos observations éventuelles..." wrapText="true" />
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+
+        <!-- Boutons d'action -->
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closeForm" prefHeight="35.0" prefWidth="100.0"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px;"
+                    text="Annuler" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveMission" prefHeight="35.0" prefWidth="120.0"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+                    text="Enregistrer" />
+        </HBox>
+
+    </VBox>
+</AnchorPane>

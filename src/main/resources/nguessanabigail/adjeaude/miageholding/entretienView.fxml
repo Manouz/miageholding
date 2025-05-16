@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0" >
+    <VBox spacing="20" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.2" >
+        <HBox alignment="CENTER_LEFT" prefWidth="700.0" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10 10 0 0; -fx-padding: 10;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Nouvel entretien" />
+            <Region HBox.hgrow="ALWAYS" />
+        </HBox>
+
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white; -fx-background-radius: 0 0 10 10;" VBox.vgrow="ALWAYS">
+            <GridPane hgap="15.0" style="-fx-padding: 10;" vgap="10.0">
+                <!-- Première colonne -->
+                <Label style="-fx-font-weight: bold;" text="Véhicule" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="vehiculeComboBox" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label style="-fx-font-weight: bold;" text="Date d'entrée" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <DatePicker fx:id="dateEntreePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label style="-fx-font-weight: bold;" text="Date de sortie prévue" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <DatePicker fx:id="dateSortiePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label style="-fx-font-weight: bold;" text="Motif" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="motifField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Deuxième colonne -->
+                <Label style="-fx-font-weight: bold;" text="Lieu" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="lieuField" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <Label style="-fx-font-weight: bold;" text="Coût estimé" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="coutField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label style="-fx-font-weight: bold;" text="Statut" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <ComboBox fx:id="statutComboBox" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <Label style="-fx-font-weight: bold;" text="Type d'entretien" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <ComboBox fx:id="typeEntretienComboBox" prefWidth="250" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <!-- Observations -->
+                <Label style="-fx-font-weight: bold;" text="Observations" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextArea fx:id="observationsArea" prefHeight="100" prefWidth="550" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+
+                <!-- Boutons de validation -->
+                <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="5">
+                    <Button fx:id="cancelButton" onAction="#closeForm" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Annuler" />
+                    <Button fx:id="saveButton" onAction="#saveEntretien" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Enregistrer" />
+                </HBox>
+
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>
